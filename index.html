@@ -644,12 +644,14 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Exemplos:</h2>
+<h2>Exemplos de boas práticas</h2>
 <ul>
 <li><p>Boas práticas, como: não usar caracteres especiais nos caminhos, variáveis, nomes de coluna, etc; armazenar os arquivos de forma consistente.</p></li>
-<li><p>Registrar a versão do R e dos pacotes utilizados</p></li>
+<li><p>Registrar a versão do R e dos pacotes utilizados (ex. pacote <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> ou estruturando a análise em um pacote)</p></li>
+<li><p>Controlar a versão dos arquivos (com Git e <a href="https://github.com/">GitHub</a>)</p></li>
 <li><p>Documentar a análise</p></li>
-<li><p>Controlar a versão dos arquivos</p></li>
+<li><p>Transformar códigos ou etapas repetitivas em funções</p></li>
+<li><p>Algo que facilita: use um gerenciador de referências (eu uso o <a href="https://www.zotero.org/">Zotero</a>)!</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -749,12 +751,12 @@
 <h2>Exemplos</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="qsjpygixku" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="iodhejekkm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qsjpygixku .gt_table {
+#iodhejekkm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -779,7 +781,7 @@
   border-left-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_heading {
+#iodhejekkm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -791,7 +793,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_title {
+#iodhejekkm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -803,7 +805,7 @@
   border-bottom-width: 0;
 }
 
-#qsjpygixku .gt_subtitle {
+#iodhejekkm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -815,13 +817,13 @@
   border-top-width: 0;
 }
 
-#qsjpygixku .gt_bottom_border {
+#iodhejekkm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_col_headings {
+#iodhejekkm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -836,7 +838,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_col_heading {
+#iodhejekkm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -856,7 +858,7 @@
   overflow-x: hidden;
 }
 
-#qsjpygixku .gt_column_spanner_outer {
+#iodhejekkm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -868,15 +870,15 @@
   padding-right: 4px;
 }
 
-#qsjpygixku .gt_column_spanner_outer:first-child {
+#iodhejekkm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qsjpygixku .gt_column_spanner_outer:last-child {
+#iodhejekkm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qsjpygixku .gt_column_spanner {
+#iodhejekkm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -888,7 +890,7 @@
   width: 100%;
 }
 
-#qsjpygixku .gt_group_heading {
+#iodhejekkm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -913,7 +915,7 @@
   vertical-align: middle;
 }
 
-#qsjpygixku .gt_empty_group_heading {
+#iodhejekkm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -928,15 +930,15 @@
   vertical-align: middle;
 }
 
-#qsjpygixku .gt_from_md > :first-child {
+#iodhejekkm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qsjpygixku .gt_from_md > :last-child {
+#iodhejekkm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qsjpygixku .gt_row {
+#iodhejekkm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -955,7 +957,7 @@
   overflow-x: hidden;
 }
 
-#qsjpygixku .gt_stub {
+#iodhejekkm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -968,7 +970,7 @@
   padding-right: 5px;
 }
 
-#qsjpygixku .gt_stub_row_group {
+#iodhejekkm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -982,11 +984,11 @@
   vertical-align: top;
 }
 
-#qsjpygixku .gt_row_group_first td {
+#iodhejekkm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qsjpygixku .gt_summary_row {
+#iodhejekkm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -996,16 +998,16 @@
   padding-right: 5px;
 }
 
-#qsjpygixku .gt_first_summary_row {
+#iodhejekkm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_first_summary_row.thick {
+#iodhejekkm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qsjpygixku .gt_last_summary_row {
+#iodhejekkm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1015,7 +1017,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_grand_summary_row {
+#iodhejekkm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1025,7 +1027,7 @@
   padding-right: 5px;
 }
 
-#qsjpygixku .gt_first_grand_summary_row {
+#iodhejekkm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1035,11 +1037,11 @@
   border-top-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_striped {
+#iodhejekkm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qsjpygixku .gt_table_body {
+#iodhejekkm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1048,7 +1050,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_footnotes {
+#iodhejekkm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1062,7 +1064,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_footnote {
+#iodhejekkm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1071,7 +1073,7 @@
   padding-right: 5px;
 }
 
-#qsjpygixku .gt_sourcenotes {
+#iodhejekkm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1085,7 +1087,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qsjpygixku .gt_sourcenote {
+#iodhejekkm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1093,60 +1095,60 @@
   padding-right: 5px;
 }
 
-#qsjpygixku .gt_left {
+#iodhejekkm .gt_left {
   text-align: left;
 }
 
-#qsjpygixku .gt_center {
+#iodhejekkm .gt_center {
   text-align: center;
 }
 
-#qsjpygixku .gt_right {
+#iodhejekkm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qsjpygixku .gt_font_normal {
+#iodhejekkm .gt_font_normal {
   font-weight: normal;
 }
 
-#qsjpygixku .gt_font_bold {
+#iodhejekkm .gt_font_bold {
   font-weight: bold;
 }
 
-#qsjpygixku .gt_font_italic {
+#iodhejekkm .gt_font_italic {
   font-style: italic;
 }
 
-#qsjpygixku .gt_super {
+#iodhejekkm .gt_super {
   font-size: 65%;
 }
 
-#qsjpygixku .gt_footnote_marks {
+#iodhejekkm .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#qsjpygixku .gt_asterisk {
+#iodhejekkm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qsjpygixku .gt_slash_mark {
+#iodhejekkm .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#qsjpygixku .gt_fraction_numerator {
+#iodhejekkm .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#qsjpygixku .gt_fraction_denominator {
+#iodhejekkm .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1258,21 +1260,10 @@
 </section>
 <section class="slide level2 middle center">
 <h2>Vamos começar?</h2>
+<h3><a href="https://rstudio.cloud/project/4042565" class="uri">https://rstudio.cloud/project/4042565</a></h3>
 </section>
 <section class="slide level2 middle center">
 <h2>Indo além do R Markdown simples</h2>
-</section>
-<section class="slide level2 small">
-<h2>Adicionar equações</h2>
-<p>Podemos adicionar equações em LaTeX. Dica: <a href="https://app.mettzer.com/latex">Equações em LaTeX no Mettzer</a>, ou pesquise no google por “Equações em LaTeX”.</p>
-<p>Equação centralizada: Envolver a equação por dois <code>$</code>.</p>
-<p><span class="math display">\[{\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}\]</span></p>
-<p>Equação junto ao texto: Envolver a equação por um <code>$</code>.</p>
-<blockquote>
-<p>Ou também na linha <span class="math inline">\({\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}\)</span>, junto ao texto!</p>
-</blockquote>
-<p><strong>Código Markdown:</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2 small">
 <h2>Citar o R - Função citation()</h2>
@@ -1303,32 +1294,32 @@ please cite it when using it for data analysis. See also
 <h2>Citar pacotes</h2>
 <p>Podemos gerar um <code>.bib</code> com as referências de pacotes utilizados usando a função <code>knitr::write_bib()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(pacotes, <span class="co"># pacotes para gerar a referencia</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>                 <span class="co"># local para salvar o arquivo</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>                 <span class="st">'packages.bib'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(pacotes, <span class="co"># pacotes para gerar a referencia</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>                 <span class="co"># local para salvar o arquivo</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>                 <span class="st">'packages.bib'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>Exemplo</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {{bib}} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>@Manual{R-tidyverse,</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  title = {tidyverse: Easily Install and Load the Tidyverse},</span>
-<span id="cb9-3"><a href="#cb9-3"></a>  author = {Hadley Wickham},</span>
-<span id="cb9-4"><a href="#cb9-4"></a>  year = {2021},</span>
-<span id="cb9-5"><a href="#cb9-5"></a>  note = {R package version 1.3.1},</span>
-<span id="cb9-6"><a href="#cb9-6"></a>  url = {https://CRAN.R-project.org/package=tidyverse},</span>
-<span id="cb9-7"><a href="#cb9-7"></a>}</span>
-<span id="cb9-8"><a href="#cb9-8"></a></span>
-<span id="cb9-9"><a href="#cb9-9"></a>@Article{tidyverse2019,</span>
-<span id="cb9-10"><a href="#cb9-10"></a>  title = {Welcome to the {tidyverse}},</span>
-<span id="cb9-11"><a href="#cb9-11"></a>  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},</span>
-<span id="cb9-12"><a href="#cb9-12"></a>  year = {2019},</span>
-<span id="cb9-13"><a href="#cb9-13"></a>  journal = {Journal of Open Source Software},</span>
-<span id="cb9-14"><a href="#cb9-14"></a>  volume = {4},</span>
-<span id="cb9-15"><a href="#cb9-15"></a>  number = {43},</span>
-<span id="cb9-16"><a href="#cb9-16"></a>  pages = {1686},</span>
-<span id="cb9-17"><a href="#cb9-17"></a>  doi = {10.21105/joss.01686},</span>
-<span id="cb9-18"><a href="#cb9-18"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {{bib}} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>@Manual{R-tidyverse,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  title = {tidyverse: Easily Install and Load the Tidyverse},</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  author = {Hadley Wickham},</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  year = {2021},</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  note = {R package version 1.3.1},</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  url = {https://CRAN.R-project.org/package=tidyverse},</span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a>@Article{tidyverse2019,</span>
+<span id="cb8-10"><a href="#cb8-10"></a>  title = {Welcome to the {tidyverse}},</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  year = {2019},</span>
+<span id="cb8-13"><a href="#cb8-13"></a>  journal = {Journal of Open Source Software},</span>
+<span id="cb8-14"><a href="#cb8-14"></a>  volume = {4},</span>
+<span id="cb8-15"><a href="#cb8-15"></a>  number = {43},</span>
+<span id="cb8-16"><a href="#cb8-16"></a>  pages = {1686},</span>
+<span id="cb8-17"><a href="#cb8-17"></a>  doi = {10.21105/joss.01686},</span>
+<span id="cb8-18"><a href="#cb8-18"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 <h2>Como citar no .Rmd</h2>
@@ -1376,6 +1367,7 @@ please cite it when using it for data analysis. See also
 <li><p>O conteúdo do arquivo <code>.bib</code> é formatado a partir de um arquivo <code>.csl</code> (Citation Style Language).</p></li>
 <li><p>Devemos informar caminho até o arquivo CSL no YAML, por exemplo:</p></li>
 </ul>
+<!-- -->
 <pre><code>csl: template/abnt.csl</code></pre>
 <ul>
 <li><p>Lugares para baixar arquivos CSL:</p>
@@ -1391,6 +1383,7 @@ please cite it when using it for data analysis. See also
 <li><p>Em alguns casos, somos obrigados a enviar arquivos <code>.docx</code> (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).</p></li>
 <li><p>Podemos informar um template de arquivo word como referência. As regras de formatação serão copiadas. Não funciona perfeitamente!</p></li>
 </ul>
+<!-- -->
 <pre><code>output: 
   bookdown::word_document2:
     reference_docx: template/modelo.docx</code></pre>
@@ -1401,6 +1394,7 @@ please cite it when using it for data analysis. See also
 <li><p>Em alguns casos, somos obrigados a enviar arquivos <code>.docx</code> (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).</p></li>
 <li><p>Exemplo de YAML:</p></li>
 </ul>
+<!-- -->
 <pre><code>output: 
   bookdown::word_document2:
     reference_docx: template/modelo.docx
@@ -1447,6 +1441,18 @@ csl: template/abnt.csl</code></pre>
 </ul></li>
 </ul></li>
 </ul>
+</section>
+<section class="slide level2 small">
+<h2>Adicionar equações</h2>
+<p>Podemos adicionar equações em LaTeX. Dica: <a href="https://app.mettzer.com/latex">Equações em LaTeX no Mettzer</a>, ou pesquise no google por “Equações em LaTeX”.</p>
+<p>Equação centralizada: Envolver a equação por dois <code>$</code>.</p>
+<p><span class="math display">\[{\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}\]</span></p>
+<p>Equação junto ao texto: Envolver a equação por um <code>$</code>.</p>
+<blockquote>
+<p>Ou também na linha <span class="math inline">\({\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}\)</span>, junto ao texto!</p>
+</blockquote>
+<p><strong>Código Markdown:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a>$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 <h2>Outras referências interessantes:</h2>

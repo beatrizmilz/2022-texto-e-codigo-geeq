@@ -227,15 +227,19 @@ Nature 533, 452--454 (2016).
 <https://doi.org/10.1038/533452a>
 :::
 
-## Exemplos:
+## Exemplos de boas práticas
 
 -   Boas práticas, como: não usar caracteres especiais nos caminhos, variáveis, nomes de coluna, etc; armazenar os arquivos de forma consistente.
 
--   Registrar a versão do R e dos pacotes utilizados
+-   Registrar a versão do R e dos pacotes utilizados (ex. pacote [renv](https://rstudio.github.io/renv/articles/renv.html) ou estruturando a análise em um pacote)
+
+-   Controlar a versão dos arquivos (com Git e [GitHub](https://github.com/))
 
 -   Documentar a análise
 
--   Controlar a versão dos arquivos
+- Transformar códigos ou etapas repetitivas em funções
+
+- Algo que facilita: use um gerenciador de referências (eu uso o [Zotero](https://www.zotero.org/))!
 
 ## Projetos do RStudio
 
@@ -409,56 +413,35 @@ exemplos_rmd |>
 
 ## Vamos começar? {.middle .center}
 
-
+### <https://rstudio.cloud/project/4042565>
 
 ## Indo além do R Markdown simples {.middle .center}
-
-## Adicionar equações {.small}
-
-Podemos adicionar equações em LaTeX. Dica: [Equações em LaTeX no Mettzer](https://app.mettzer.com/latex), ou pesquise no google por "Equações em LaTeX".
-  
-Equação centralizada: Envolver a equação por dois `$`.
-
-$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
-
-Equação junto ao texto: Envolver a equação por um `$`.
-
-> Ou também na linha ${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$, junto ao texto!
-
-**Código Markdown:**
-
-```md
-$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
-```
 
 
 ## Citar o R - Função citation() {.small}
 
+    > citation() 
 
-```
-> citation() 
+    To cite R in publications use:
 
-To cite R in publications use:
+      R Core Team (2021). R: A language and environment for
+      statistical computing. R Foundation for Statistical
+      Computing, Vienna, Austria. URL https://www.R-project.org/.
 
-  R Core Team (2021). R: A language and environment for
-  statistical computing. R Foundation for Statistical
-  Computing, Vienna, Austria. URL https://www.R-project.org/.
+    A BibTeX entry for LaTeX users is
 
-A BibTeX entry for LaTeX users is
+      @Manual{,
+        title = {R: A Language and Environment for Statistical Computing},
+        author = {{R Core Team}},
+        organization = {R Foundation for Statistical Computing},
+        address = {Vienna, Austria},
+        year = {2021},
+        url = {https://www.R-project.org/},
+      }
 
-  @Manual{,
-    title = {R: A Language and Environment for Statistical Computing},
-    author = {{R Core Team}},
-    organization = {R Foundation for Statistical Computing},
-    address = {Vienna, Austria},
-    year = {2021},
-    url = {https://www.R-project.org/},
-  }
-
-We have invested a lot of time and effort in creating R,
-please cite it when using it for data analysis. See also
-‘citation("pkgname")’ for citing R packages.
-```
+    We have invested a lot of time and effort in creating R,
+    please cite it when using it for data analysis. See also
+    ‘citation("pkgname")’ for citing R packages.
 
 ## Citar pacotes
 
@@ -473,8 +456,7 @@ knitr::write_bib(pacotes, # pacotes para gerar a referencia
 
 ## Exemplo
 
-
-```{{bib}}
+``` {{bib}}
 @Manual{R-tidyverse,
   title = {tidyverse: Easily Install and Load the Tidyverse},
   author = {Hadley Wickham},
@@ -497,8 +479,7 @@ knitr::write_bib(pacotes, # pacotes para gerar a referencia
 
 ## Como citar no .Rmd
 
-
-- Formas de usar os rótulos gerados no arquivo `.Rmd`:
+-   Formas de usar os rótulos gerados no arquivo `.Rmd`:
 
 ```{r}
 tibble::tibble(
@@ -523,98 +504,109 @@ tibble::tibble(
   knitr::kable()
 ```
 
-
 ## Formatação das referências
 
-- O conteúdo do arquivo `.bib` é formatado a partir de um arquivo `.csl` (Citation Style Language).
+-   O conteúdo do arquivo `.bib` é formatado a partir de um arquivo `.csl` (Citation Style Language).
 
-- Devemos informar caminho até o arquivo CSL no YAML, por exemplo:
+-   Devemos informar caminho até o arquivo CSL no YAML, por exemplo:
 
+```{=html}
+<!-- -->
 ```
-csl: template/abnt.csl
-```
+    csl: template/abnt.csl
 
-- Lugares para baixar arquivos CSL:
+-   Lugares para baixar arquivos CSL:
 
-  - <https://github.com/citation-style-language/styles>
-  - <https://citationstyles.org/>
-
+    -   <https://github.com/citation-style-language/styles>
+    -   <https://citationstyles.org/>
 
 ## Usar um modelo para word
 
-- Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
+-   Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
 
-- Podemos informar um template de arquivo word como referência. As regras de formatação serão copiadas. Não funciona perfeitamente!
+-   Podemos informar um template de arquivo word como referência.
+    As regras de formatação serão copiadas.
+    Não funciona perfeitamente!
 
+```{=html}
+<!-- -->
 ```
-output: 
-  bookdown::word_document2:
-    reference_docx: template/modelo.docx
-```  
-
+    output: 
+      bookdown::word_document2:
+        reference_docx: template/modelo.docx
 
 ## Exportar um `.docx` tunado
 
-- Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
+-   Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
 
-- Exemplo de YAML:
+-   Exemplo de YAML:
 
+```{=html}
+<!-- -->
 ```
-output: 
-  bookdown::word_document2:
-    reference_docx: template/modelo.docx
-    number_sections: false
-bibliography: [referencias/packages.bib, referencias/zotero.bib]
-csl: template/abnt.csl
-```    
-
+    output: 
+      bookdown::word_document2:
+        reference_docx: template/modelo.docx
+        number_sections: false
+    bibliography: [referencias/packages.bib, referencias/zotero.bib]
+    csl: template/abnt.csl
 
 ## Referência cruzada - Elementos
 
+-   Funciona com outputs que são derivados do pacote bookdown.
+    -   Ex: `bookdown::html_document2`, `bookdown::word_document2`
+-   **Figuras, tabelas, equações, etc:**
+    -   Usamos o rótulo do chunk (ou nome) onde a tabela ou imagem foi criada para fazer a referência cruzada.
+        -   Ex: `\@ref(fig:rotulo-da-imagem)` , `\@ref(tab:rotulo-da-tabela)`, ou `\@ref(eq:rotulo-da-equacao)`.
+        -   Referência: <https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html>
 
-- Funciona com outputs que são derivados do pacote bookdown. 
-  - Ex: `bookdown::html_document2`,  `bookdown::word_document2`
-
-- **Figuras, tabelas, equações, etc:**
-  - Usamos o rótulo do chunk (ou nome) onde a tabela ou imagem foi criada para fazer a referência cruzada. 
-    - Ex: `\@ref(fig:rotulo-da-imagem)` , `\@ref(tab:rotulo-da-tabela)`, ou `\@ref(eq:rotulo-da-equacao)`.
-    - Referência: <https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html>
-    
-
-    
 ## Referência cruzada - Capítulos/Seções
 
+-   Funciona com outputs que são derivados do pacote bookdown.
+    -   Ex: `bookdown::html_document2`, `bookdown::word_document2`
 
-- Funciona com outputs que são derivados do pacote bookdown. 
-  - Ex: `bookdown::html_document2`,  `bookdown::word_document2`
-   
 ## Referência cruzada - Capítulos/Seções
 
-- **Capítulos:**
-  - Para fazer referência cruzada em capítulos/seções, devemos adicionar um rótulo para o capítulo, que deverá ser escrito logo após a cabeçalho (que delimitamos com `#`, `##`, etc). Para referenciar no texto, devemos usar `\@ref(rotulo-do-capitulo)`.
-    - Exemplo da criação do rótulo:  `# Introdução {#introducao}`
-    - Exemplo de uso no texto: `\@ref(introducao)` . 
-    - Referência: https://bookdown.org/yihui/bookdown/cross-references.html
-    
+-   **Capítulos:**
+    -   Para fazer referência cruzada em capítulos/seções, devemos adicionar um rótulo para o capítulo, que deverá ser escrito logo após a cabeçalho (que delimitamos com `#`, `##`, etc). Para referenciar no texto, devemos usar `\@ref(rotulo-do-capitulo)`.
+        -   Exemplo da criação do rótulo: `# Introdução {#introducao}`
+        -   Exemplo de uso no texto: `\@ref(introducao)` .
+        -   Referência: https://bookdown.org/yihui/bookdown/cross-references.html
+        
+## Adicionar equações {.small}
 
+Podemos adicionar equações em LaTeX.
+Dica: [Equações em LaTeX no Mettzer](https://app.mettzer.com/latex), ou pesquise no google por "Equações em LaTeX".
 
-  
+Equação centralizada: Envolver a equação por dois `$`.
+
+$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
+
+Equação junto ao texto: Envolver a equação por um `$`.
+
+> Ou também na linha ${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$, junto ao texto!
+
+**Código Markdown:**
+
+``` md
+$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
+```
 
 
 ## Outras referências interessantes:
 
 Em Português:
 
-- [Relatórios reprodutíveis com R - Curso de Verão IME-USP 2022](https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/slides/#1)
+-   [Relatórios reprodutíveis com R - Curso de Verão IME-USP 2022](https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/slides/#1)
 
-- [Escrevendo manuscritos acadêmicos usando R Markdown](https://www.youtube.com/watch?v=Cxrc87AH2WM&list=PL9-E3cL2KgKmhrk9rba786DTMvnPh9fJD&index=1)
+-   [Escrevendo manuscritos acadêmicos usando R Markdown](https://www.youtube.com/watch?v=Cxrc87AH2WM&list=PL9-E3cL2KgKmhrk9rba786DTMvnPh9fJD&index=1)
 
-- [Ciência de Dados em R - Capítulo 9 Relatórios](https://livro.curso-r.com/9-relatorios.html)
+-   [Ciência de Dados em R - Capítulo 9 Relatórios](https://livro.curso-r.com/9-relatorios.html)
 
 Em Inglês:
 
-- [Tom Mock | A Gentle Introduction to Tidy Statistics in R | RStudio (2019)](https://youtu.be/wfMAaXWHGog)
+-   [Tom Mock \| A Gentle Introduction to Tidy Statistics in R \| RStudio (2019)](https://youtu.be/wfMAaXWHGog)
 
-- [Tom Mock | R Markdown Advanced Tips to Become a Better Data Scientist  | RStudio](https://youtu.be/WkF7nqEYF1E)
+-   [Tom Mock \| R Markdown Advanced Tips to Become a Better Data Scientist \| RStudio](https://youtu.be/WkF7nqEYF1E)
 
 -   [Introduction to bioinformatics - Chapter 8 Reproducible research - Laurent Gatto](https://uclouvain-cbio.github.io/WSBIM1207/sec-rr.html)
