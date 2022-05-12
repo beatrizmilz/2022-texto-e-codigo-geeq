@@ -3,7 +3,7 @@ title: "Texto e código"
 subtitle: "Escrevendo documentos Científicos com R <br> Grupo de Estudos de Ecologia Quantitativa (GEEQ)"
 format: 
   revealjs:
-    incremental: true   
+    incremental: false
     footer: "Slides por [Beatriz Milz](https://beatrizmilz.com), feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Códigos e materiais disponíveis no [GitHub](https://github.com/beatrizmilz/2022-texto-e-codigo-geeq). Licença de uso: [CC-BY-SA](https://beatrizmilz.com/license/)."
     theme: ["custom.scss"]
     slide-number: c/t
@@ -40,7 +40,6 @@ date: 'Maio de 2022'
 -   [Instrutora de tidyverse certificada pela RStudio](https://education.rstudio.com/trainers/people/milz+beatriz/).
 :::
 :::
-
 
 ## Curso-R {.center}
 
@@ -118,22 +117,23 @@ Use a barra de rolagem do navegador para ver tudo :D
 templatesR6::criar_slide_nossos_cursos()
 ```
 
-
 ## Alinhamentos de expectativas
 
 -   Conteúdo introdutório!
 
 -   Falaremos um pouco sobre:
 
-    -   O que é o R? RStudio? RStudio Cloud?
-    
-    - Introdução à reprodutibilidade
-    
-    - O que são projetos no RStudio?
-    
-    - O que é o pacote RMarkdown?
-    
-    - Parte prática no RStudio Cloud
+    -   O que é o R?
+        RStudio?
+        RStudio Cloud?
+
+    -   Introdução à reprodutibilidade
+
+    -   O que são projetos no RStudio?
+
+    -   O que é o pacote RMarkdown?
+
+    -   Parte prática no RStudio Cloud
 
 ## O que é o R?
 
@@ -186,181 +186,156 @@ knitr::include_graphics("img/rstudio.png")
 
 ![](img/environmental-data-science-r4ds-general.png){fig-align="center" width="60%"}
 
-
-
 ::: footer
 Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), ilustração por [Allison Horst](https://github.com/allisonhorst).
 :::
-
 
 ## Ciclo da ciência de dados com R
 
 ![](img/ciclo-ciencia-de-dados.png){fig-align="center" width="60%"}
 
-
-
 ::: footer
 Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), figura elaborada pela equipe da [Curso-R](https://curso-r.com/).
 :::
 
-
 ## Introdução ao conceito de reprodutibilidade
 
-- "É um conceito que não tem uma definição única e comum". [(Gundersen, 2021)](https://doi.org/10.1098/rsta.2020.0210)
+-   "É um conceito que não tem uma definição única e comum".
+    [(Gundersen, 2021)](https://doi.org/10.1098/rsta.2020.0210)
 
-- "Para alguém fazer uma afirmação científica legítima, ele deve ser capaz de reproduzir totalmente seus resultados a partir de seus dados brutos (e de preferência outros devem ser capazes de reproduzi-los também)". [Dr. John Paul Helveston](https://jhelvy.github.io/r4aPrimer/L6-reproducible-reporting.html)
+-   "Para alguém fazer uma afirmação científica legítima, ele deve ser capaz de reproduzir totalmente seus resultados a partir de seus dados brutos (e de preferência outros devem ser capazes de reproduzi-los também)".
+    [Dr. John Paul Helveston](https://jhelvy.github.io/r4aPrimer/L6-reproducible-reporting.html)
 
 ## Reprodutibilidade
 
-Quais fatores contribuem com  pesquisa não reprodutível?
-
+Quais fatores contribuem com pesquisa não reprodutível?
 
 ![](img/irreproducible.png){fig-align="center" width="60%"}
 
-
-
-
-:::footer
- Fonte: <a href='https://doi.org/10.1038/533452a'>Baker (2016)</a>
+::: footer
+Fonte: <a href='https://doi.org/10.1038/533452a'>Baker (2016)</a>
 :::
-
 
 ## Reprodutibilidade
 
+> "Reprodutibilidade é como escovar os dentes. Isso é bom para você, mas leva tempo e esforço. Depois de aprender, torna-se um hábito." - Irakli Loladze, Bryan College of Health Sciences em Lincoln, Nebraska.
 
-> “Reprodutibilidade é como escovar os dentes. Isso é bom para você, mas leva tempo e esforço. Depois de aprender, torna-se um hábito.” - Irakli Loladze, Bryan College of Health Sciences em Lincoln, Nebraska.  
-
-  
-:::footer
-Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016). <https://doi.org/10.1038/533452a>
+::: footer
+Baker, M.
+1,500 scientists lift the lid on reproducibility.
+Nature 533, 452--454 (2016).
+<https://doi.org/10.1038/533452a>
 :::
-
 
 ## Exemplos:
 
-  - Boas práticas, como: não usar caracteres especiais nos caminhos, variáveis, nomes de coluna, etc; armazenar os arquivos de forma consistente.
+-   Boas práticas, como: não usar caracteres especiais nos caminhos, variáveis, nomes de coluna, etc; armazenar os arquivos de forma consistente.
 
-  - Registrar a versão do R e dos pacotes utilizados
-  
-  - Documentar a análise
-  
-  - Controlar a versão dos arquivos
+-   Registrar a versão do R e dos pacotes utilizados
 
+-   Documentar a análise
 
-
+-   Controlar a versão dos arquivos
 
 ## Projetos do RStudio
 
+-   O RStudio permite a criação de Projetos.
 
+-   O projeto é uma pasta no computador, onde devemos armazenar todos os arquivos usados ou criados em uma análise.
+    Essa pasta irá conter também um arquivo com o nome do projeto e a extensão `.Rproj`.
 
-- O RStudio permite a criação de Projetos.
+-   Para cada análise, lembre-se de criar um `.Rproj` correspondente.
 
-
-- O projeto é uma pasta no computador, onde devemos armazenar todos os arquivos usados ou criados em uma análise. Essa pasta irá conter também um arquivo com o nome do projeto e a extensão `.Rproj`.
-
-- Para cada análise, lembre-se de criar um `.Rproj` correspondente.
-
-
-- Usar projetos no RStudio facilita a organização dos arquivos, posteriormente sincronizar com o GitHub, entre outros.
+-   Usar projetos no RStudio facilita a organização dos arquivos, posteriormente sincronizar com o GitHub, entre outros.
 
 ![](img/rprojs.png){fig-align="center" width="30%"}
 
 ## Criando um projeto
 
-- Criando um projeto em uma nova pasta:
+-   Criando um projeto em uma nova pasta:
 
-  - File > New Project > New Directory > New Project
-  
-  - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
-  
- 
+    -   File \> New Project \> New Directory \> New Project
+
+    -   Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
 
 ## Diretório de trabalho/Working Directory
 
-- O diretório de trabalho é a pasta em que o R irá:
-  - procurar arquivos na hora de ler informações;
-  - gravar arquivos na hora de salvar objetos.
-
-
-- Quando usamos Projetos do RStudio, o nosso diretório de trabalho é a pasta principal do projeto. 
+-   O diretório de trabalho é a pasta em que o R irá:
+    -   procurar arquivos na hora de ler informações;
+    -   gravar arquivos na hora de salvar objetos.
+-   Quando usamos Projetos do RStudio, o nosso diretório de trabalho é a pasta principal do projeto.
 
 ## Diretório de trabalho/Working Directory
 
-- A função `getwd()` serve para conferir o diretório de trabalho: 
+-   A função `getwd()` serve para conferir o diretório de trabalho:
 
-```r
+``` r
 > getwd()
 [1] "/Users/beatrizmilz/GitHub/2022-curso-de-verao-ime-usp-relatorios"
 ```
 
-- A função `setwd()` serve para alterar o diretório de trabalho. **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
+-   A função `setwd()` serve para alterar o diretório de trabalho. **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
 
-  
 ## Caminhos
 
-- Caminhos são textos que representam o endereço do arquivo no computador. 
+-   Caminhos são textos que representam o endereço do arquivo no computador.
 
-- É muito importante entender como funcionam! Caso contrário, ficará difícil fazer coisas como importar dados para o R.
+-   É muito importante entender como funcionam!
+    Caso contrário, ficará difícil fazer coisas como importar dados para o R.
 
 ## Caminhos absolutos e relativos
 
-- Caminhos absolutos: tem início na pasta raiz do seu computador/usuário. **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
+-   Caminhos absolutos: tem início na pasta raiz do seu computador/usuário.
+    **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
 
-- Caminhos relativos: tem início no diretório de trabalho da sessão. Caso você esteja usando projetos, os caminhos relativos tem início na pasta inicial do projeto. 
+-   Caminhos relativos: tem início no diretório de trabalho da sessão.
+    Caso você esteja usando projetos, os caminhos relativos tem início na pasta inicial do projeto.
 
-
-- **Utilize sempre que possível caminhos relativos.**
-
+-   **Utilize sempre que possível caminhos relativos.**
 
 ## Exemplos de caminhos
 
 Exemplos acessando o mesmo arquivo:
 
 Caminho absoluto:
-```
-"/Users/beatrizmilz/GitHub/2022-curso-de-verao-ime-usp-relatorios/docs/slides/img/rprojs.png"
-```
+
+    "/Users/beatrizmilz/GitHub/2022-curso-de-verao-ime-usp-relatorios/docs/slides/img/rprojs.png"
 
 Caminho relativo:
-```
-"docs/slides/img/rprojs.png"
-```
 
+    "docs/slides/img/rprojs.png"
 
 ## here
-O pacote `here` também possui funções úteis para escrever caminhos: 
+
+O pacote `here` também possui funções úteis para escrever caminhos:
 
 ```{r echo=TRUE}
 here::here()
 ```
 
+## Pacote R Markdown
+
+-   Criado e mantido pela [RStudio](https://rstudio.com/)
+
+-   Princípio: arquivos onde escrevemos textos e marcamos com `markdown`, mas também podemos adicionar códigos que são executados.
+
+-   Extensão `.Rmd`
+
+-   Possibilita a utilização de códigos `R`, `Python`, `Markdown`, `HTML`, `CSS`, `SQL`, e outros em um único arquivo.
+
+-   A reprodutibilidade é algo importante para o R Markdown.
 
 ## Pacote R Markdown
 
-
-- Criado e mantido pela [RStudio](https://rstudio.com/)
-
-- Princípio: arquivos onde escrevemos textos e marcamos com `markdown`, mas também podemos adicionar códigos que são executados.
-
-- Extensão `.Rmd`
-
-- Possibilita a utilização de códigos `R`, `Python`, `Markdown`, `HTML`, `CSS`, `SQL`, e outros em um único arquivo.
-
-- A reprodutibilidade é algo importante para o R Markdown.
-
-## Pacote R Markdown
-
-A comunidade de R, e a equipe da RStudio, desenvolveram outros pacotes que integram bem com R Markdown para  gerar diversos produtos de análise de dados diferentes, com arquivos .Rmd. 
+A comunidade de R, e a equipe da RStudio, desenvolveram outros pacotes que integram bem com R Markdown para gerar diversos produtos de análise de dados diferentes, com arquivos .Rmd.
 
 ![](https://beatrizmilz.github.io/slidesR/img/rmarkdown/markdown.png){fig-align="center" width="30%"}
 
-
-:::footer
+::: footer
 Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a>
 :::
 
 ## Exemplos {.small}
-
 
 ```{r echo=FALSE}
 exemplos_rmd <- tibble::tibble(pacote = as.character(),
@@ -410,42 +385,236 @@ exemplos_rmd |>
   gt::fmt_markdown(columns = tidyselect::everything())
 ```
 
-
-:::footer
+::: footer
 <i class="far fa-flag"></i> Slide adaptado do curso de Relatórios automatizados, da [Curso-R](https://curso-r.com/).
 :::
 
-
-
 ## Outros pacotes:
 
-  - [rticles](https://github.com/rstudio/rticles)
+-   [rticles](https://github.com/rstudio/rticles)
 
-  - [bslib](https://rstudio.github.io/bslib/)
+-   [bslib](https://rstudio.github.io/bslib/)
 
-  - [rmdformats](https://github.com/juba/rmdformats)
+-   [rmdformats](https://github.com/juba/rmdformats)
 
-  - [officedown](https://github.com/davidgohel/officedown) 
+-   [officedown](https://github.com/davidgohel/officedown)
 
-  - [postcards](https://github.com/seankross/postcards)
-
-
-
+-   [postcards](https://github.com/seankross/postcards)
 
 ## Podemos criar templates
 
-  - [abjTemplates](https://github.com/abjur/abjTemplates)
+-   [abjTemplates](https://github.com/abjur/abjTemplates)
 
-  - [RLadiesTheme](https://github.com/R-Ladies-Sao-Paulo/RLadiesTheme)
-
-
-
-
-
+-   [RLadiesTheme](https://github.com/R-Ladies-Sao-Paulo/RLadiesTheme)
 
 ## Vamos começar? {.middle .center}
 
 
+
+## Indo além do R Markdown simples {.middle .center}
+
+## Adicionar equações {.small}
+
+Podemos adicionar equações em LaTeX. Dica: [Equações em LaTeX no Mettzer](https://app.mettzer.com/latex), ou pesquise no google por "Equações em LaTeX".
+  
+Equação centralizada: Envolver a equação por dois `$`.
+
+$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
+
+Equação junto ao texto: Envolver a equação por um `$`.
+
+> Ou também na linha ${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$, junto ao texto!
+
+**Código Markdown:**
+
+```md
+$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
+```
+
+
+## Citar o R - Função citation() {.small}
+
+
+```
+> citation() 
+
+To cite R in publications use:
+
+  R Core Team (2021). R: A language and environment for
+  statistical computing. R Foundation for Statistical
+  Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2021},
+    url = {https://www.R-project.org/},
+  }
+
+We have invested a lot of time and effort in creating R,
+please cite it when using it for data analysis. See also
+‘citation("pkgname")’ for citing R packages.
+```
+
+## Citar pacotes
+
+Podemos gerar um `.bib` com as referências de pacotes utilizados usando a função `knitr::write_bib()`:
+
+```{r echo=TRUE}
+pacotes <- c("tidyverse")
+knitr::write_bib(pacotes, # pacotes para gerar a referencia
+                 # local para salvar o arquivo
+                 'packages.bib')
+```
+
+## Exemplo
+
+
+```{{bib}}
+@Manual{R-tidyverse,
+  title = {tidyverse: Easily Install and Load the Tidyverse},
+  author = {Hadley Wickham},
+  year = {2021},
+  note = {R package version 1.3.1},
+  url = {https://CRAN.R-project.org/package=tidyverse},
+}
+
+@Article{tidyverse2019,
+  title = {Welcome to the {tidyverse}},
+  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+  year = {2019},
+  journal = {Journal of Open Source Software},
+  volume = {4},
+  number = {43},
+  pages = {1686},
+  doi = {10.21105/joss.01686},
+}
+```
+
+## Como citar no .Rmd
+
+
+- Formas de usar os rótulos gerados no arquivo `.Rmd`:
+
+```{r}
+tibble::tibble(
+  forma_de_citar = as.character(), resultado = as.character()
+) |> 
+  tibble::add_row(
+    forma_de_citar = "@tidyverse2019",
+    resultado = "Wickham et al. (2019)"
+  )|> 
+  tibble::add_row(
+    forma_de_citar = "[@tidyverse2019; @R-tidyverse]",
+    resultado = "(Wickham et al. 2019; Wickham 2021)"
+  )|> 
+  tibble::add_row(
+    forma_de_citar = "Em -@tidyverse2019, Hadley e colaboradores...",
+    resultado = "Em 2019, Hadley e colaboradores... "
+  ) |> 
+    tibble::add_row(
+    forma_de_citar = "Segundo Hadley Wickham e colaboradores [-@tidyverse2019]",
+    resultado = "Segundo Hadley Wickham e colaboradores (2019) "
+  ) |> 
+  knitr::kable()
+```
+
+
+## Formatação das referências
+
+- O conteúdo do arquivo `.bib` é formatado a partir de um arquivo `.csl` (Citation Style Language).
+
+- Devemos informar caminho até o arquivo CSL no YAML, por exemplo:
+
+```
+csl: template/abnt.csl
+```
+
+- Lugares para baixar arquivos CSL:
+
+  - <https://github.com/citation-style-language/styles>
+  - <https://citationstyles.org/>
+
+
+## Usar um modelo para word
+
+- Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
+
+- Podemos informar um template de arquivo word como referência. As regras de formatação serão copiadas. Não funciona perfeitamente!
+
+```
+output: 
+  bookdown::word_document2:
+    reference_docx: template/modelo.docx
+```  
+
+
+## Exportar um `.docx` tunado
+
+- Em alguns casos, somos obrigados a enviar arquivos `.docx` (ex: algumas revistas científicas apenas aceitam esse tipo de arquivo).
+
+- Exemplo de YAML:
+
+```
+output: 
+  bookdown::word_document2:
+    reference_docx: template/modelo.docx
+    number_sections: false
+bibliography: [referencias/packages.bib, referencias/zotero.bib]
+csl: template/abnt.csl
+```    
+
+
+## Referência cruzada - Elementos
+
+
+- Funciona com outputs que são derivados do pacote bookdown. 
+  - Ex: `bookdown::html_document2`,  `bookdown::word_document2`
+
+- **Figuras, tabelas, equações, etc:**
+  - Usamos o rótulo do chunk (ou nome) onde a tabela ou imagem foi criada para fazer a referência cruzada. 
+    - Ex: `\@ref(fig:rotulo-da-imagem)` , `\@ref(tab:rotulo-da-tabela)`, ou `\@ref(eq:rotulo-da-equacao)`.
+    - Referência: <https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html>
+    
+
+    
+## Referência cruzada - Capítulos/Seções
+
+
+- Funciona com outputs que são derivados do pacote bookdown. 
+  - Ex: `bookdown::html_document2`,  `bookdown::word_document2`
+   
+## Referência cruzada - Capítulos/Seções
+
+- **Capítulos:**
+  - Para fazer referência cruzada em capítulos/seções, devemos adicionar um rótulo para o capítulo, que deverá ser escrito logo após a cabeçalho (que delimitamos com `#`, `##`, etc). Para referenciar no texto, devemos usar `\@ref(rotulo-do-capitulo)`.
+    - Exemplo da criação do rótulo:  `# Introdução {#introducao}`
+    - Exemplo de uso no texto: `\@ref(introducao)` . 
+    - Referência: https://bookdown.org/yihui/bookdown/cross-references.html
+    
+
+
+  
+
+
 ## Outras referências interessantes:
 
-- [Introduction to bioinformatics -  Chapter 8 Reproducible research - Laurent Gatto](https://uclouvain-cbio.github.io/WSBIM1207/sec-rr.html)
+Em Português:
+
+- [Relatórios reprodutíveis com R - Curso de Verão IME-USP 2022](https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/slides/#1)
+
+- [Escrevendo manuscritos acadêmicos usando R Markdown](https://www.youtube.com/watch?v=Cxrc87AH2WM&list=PL9-E3cL2KgKmhrk9rba786DTMvnPh9fJD&index=1)
+
+- [Ciência de Dados em R - Capítulo 9 Relatórios](https://livro.curso-r.com/9-relatorios.html)
+
+Em Inglês:
+
+- [Tom Mock | A Gentle Introduction to Tidy Statistics in R | RStudio (2019)](https://youtu.be/wfMAaXWHGog)
+
+- [Tom Mock | R Markdown Advanced Tips to Become a Better Data Scientist  | RStudio](https://youtu.be/WkF7nqEYF1E)
+
+-   [Introduction to bioinformatics - Chapter 8 Reproducible research - Laurent Gatto](https://uclouvain-cbio.github.io/WSBIM1207/sec-rr.html)
