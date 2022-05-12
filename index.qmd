@@ -1,0 +1,451 @@
+---
+title: "Texto e código"
+subtitle: "Escrevendo documentos Científicos com R <br> Grupo de Estudos de Ecologia Quantitativa (GEEQ)"
+format: 
+  revealjs:
+    incremental: true   
+    footer: "Slides por [Beatriz Milz](https://beatrizmilz.com), feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Códigos e materiais disponíveis no [GitHub](https://github.com/beatrizmilz/2022-texto-e-codigo-geeq). Licença de uso: [CC-BY-SA](https://beatrizmilz.com/license/)."
+    theme: ["custom.scss"]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+editor: visual
+lang: pt
+author: "Beatriz Milz"
+date: 'Maio de 2022'
+---
+
+## Ministrante
+
+## Beatriz Milz {.center}
+
+::: columns
+::: {.column width="40%"}
+<center>
+
+<a href='mailto:milz.bea@gmail.com'><i class="far fa-envelope"></i></a> <a href='https://twitter.com/BeaMilz'><i class="fab fa-twitter"></i> <a href='https://github.com/beatrizmilz'><i class="fab fa-github"></i></a> <a href='https://beatrizmilz.github.io/resume/index.pdf'><i class="ai ai-cv"></i></a>
+
+<img src="img/foto.jpeg" alt="Beatriz Milz" style="border-radius: 50%;     max-width: 70%;"/>
+
+</center>
+:::
+
+::: {.column width="60%"}
+-   Professora na [Curso-R](https://curso-r.com/).
+
+-   Doutoranda em Ciência Ambiental (PROCAM/IEE/USP)
+
+-   Co-organizadora da [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`
+
+-   [Instrutora de tidyverse certificada pela RStudio](https://education.rstudio.com/trainers/people/milz+beatriz/).
+:::
+:::
+
+
+## Curso-R {.center}
+
+<center>
+
+![](https://d33wubrfki0l68.cloudfront.net/295643c6243701ae6a9bac3fb8ad467ff0ce3c84/d1785/img/logo/cursor1-41.png){style="width: 50%; !important" fig-alt="Logo da Curso-R" fig-align="center"}
+
+</center>
+
+## Filosofia de código aberto!
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = FALSE}
+
+link <- function(href, ...) {
+  htmltools::a(
+    href = href,
+    target = "_blank",
+    ...
+  )
+}
+
+htmltools::h3("Livros")
+
+link(
+  href = "https://livro.curso-r.com/",
+  htmltools::img(src = "img/hex-livro.png", width = "200px",
+   style = "margin-left: 200px;")
+)
+
+link(
+  href = "https://curso-r.github.io/zen-do-r/index.html",
+  htmltools::img(
+    src = "img/zen-do-r.png",
+    width = "200px",
+   style = "margin-left: 50px;"
+  )
+)
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo = FALSE}
+htmltools::h3("Lives")
+link(
+  href = "https://www.youtube.com/c/CursoR6",
+  htmltools::img(src = "img/youtube.png", width = "200px")
+)
+```
+
+```{r, echo = FALSE}
+htmltools::h3("Material dos cursos")
+link(
+  href = "https://github.com/curso-r",
+  htmltools::img(src = "img/github.png", width = "230px")
+)
+```
+
+```{r, echo = FALSE}
+htmltools::h3("Blog")
+link(
+  href = "https://blog.curso-r.com/",
+  htmltools::img(src = "img/blog.png", width = "400px")
+)
+```
+:::
+:::
+
+## Cursos que a Curso-R oferece: {.smaller .scrollable}
+
+Use a barra de rolagem do navegador para ver tudo :D
+
+```{r, echo = FALSE}
+templatesR6::criar_slide_nossos_cursos()
+```
+
+
+## Alinhamentos de expectativas
+
+-   Conteúdo introdutório!
+
+-   Falaremos um pouco sobre:
+
+    -   O que é o R? RStudio? RStudio Cloud?
+    
+    - Introdução à reprodutibilidade
+    
+    - O que são projetos no RStudio?
+    
+    - O que é o pacote RMarkdown?
+    
+    - Parte prática no RStudio Cloud
+
+## O que é o R?
+
+-   Linguagem de programação de código aberto
+
+-   Muito usada por pessoas da área estatística, em pesquisas científicas, para analisar dados, etc.
+
+-   A comunidade da linguagem R é muito ativa!
+
+```{r, out.width="20%", fig.align='right'}
+knitr::include_graphics("img/r_logo.png")
+```
+
+## O que é a RStudio?
+
+-   Mais conhecido pela IDE (*integrated development environment*) RStudio, o ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
+
+-   É uma companhia criada em 2009
+
+-   Tem uma grande equipe de pessoas que trabalham no desenvolvimento de pacotes em R
+
+-   Organizam a [RStudio Conference](https://www.rstudio.com/conference/) (em 2020 com mais de 2200 participantes)
+
+-   É muito próxima da comunidade
+
+## O que é o RStudio Cloud?
+
+É a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada).
+
+```{r, out.width="65%"}
+knitr::include_graphics("img/rstudio.png")
+```
+
+## Pré-requisitos
+
+### Nesta atividade:
+
+-   [RStudio Cloud](https://rstudio.cloud)
+
+### Para usar no dia-a-dia:
+
+-   `R` e `RStudio` instalados no seu computador:
+
+-   Links para instalação:
+
+    -   [R](https://cran.r-project.org/bin/windows/base/)
+    -   [RStudio](https://rstudio.com/products/rstudio/download/)
+
+## Ciclo da ciência de dados
+
+![](img/environmental-data-science-r4ds-general.png){fig-align="center" width="60%"}
+
+
+
+::: footer
+Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), ilustração por [Allison Horst](https://github.com/allisonhorst).
+:::
+
+
+## Ciclo da ciência de dados com R
+
+![](img/ciclo-ciencia-de-dados.png){fig-align="center" width="60%"}
+
+
+
+::: footer
+Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), figura elaborada pela equipe da [Curso-R](https://curso-r.com/).
+:::
+
+
+## Introdução ao conceito de reprodutibilidade
+
+- "É um conceito que não tem uma definição única e comum". [(Gundersen, 2021)](https://doi.org/10.1098/rsta.2020.0210)
+
+- "Para alguém fazer uma afirmação científica legítima, ele deve ser capaz de reproduzir totalmente seus resultados a partir de seus dados brutos (e de preferência outros devem ser capazes de reproduzi-los também)". [Dr. John Paul Helveston](https://jhelvy.github.io/r4aPrimer/L6-reproducible-reporting.html)
+
+## Reprodutibilidade
+
+Quais fatores contribuem com  pesquisa não reprodutível?
+
+
+![](img/irreproducible.png){fig-align="center" width="60%"}
+
+
+
+
+:::footer
+ Fonte: <a href='https://doi.org/10.1038/533452a'>Baker (2016)</a>
+:::
+
+
+## Reprodutibilidade
+
+
+> “Reprodutibilidade é como escovar os dentes. Isso é bom para você, mas leva tempo e esforço. Depois de aprender, torna-se um hábito.” - Irakli Loladze, Bryan College of Health Sciences em Lincoln, Nebraska.  
+
+  
+:::footer
+Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016). <https://doi.org/10.1038/533452a>
+:::
+
+
+## Exemplos:
+
+  - Boas práticas, como: não usar caracteres especiais nos caminhos, variáveis, nomes de coluna, etc; armazenar os arquivos de forma consistente.
+
+  - Registrar a versão do R e dos pacotes utilizados
+  
+  - Documentar a análise
+  
+  - Controlar a versão dos arquivos
+
+
+
+
+## Projetos do RStudio
+
+
+
+- O RStudio permite a criação de Projetos.
+
+
+- O projeto é uma pasta no computador, onde devemos armazenar todos os arquivos usados ou criados em uma análise. Essa pasta irá conter também um arquivo com o nome do projeto e a extensão `.Rproj`.
+
+- Para cada análise, lembre-se de criar um `.Rproj` correspondente.
+
+
+- Usar projetos no RStudio facilita a organização dos arquivos, posteriormente sincronizar com o GitHub, entre outros.
+
+![](img/rprojs.png){fig-align="center" width="30%"}
+
+## Criando um projeto
+
+- Criando um projeto em uma nova pasta:
+
+  - File > New Project > New Directory > New Project
+  
+  - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
+  
+ 
+
+## Diretório de trabalho/Working Directory
+
+- O diretório de trabalho é a pasta em que o R irá:
+  - procurar arquivos na hora de ler informações;
+  - gravar arquivos na hora de salvar objetos.
+
+
+- Quando usamos Projetos do RStudio, o nosso diretório de trabalho é a pasta principal do projeto. 
+
+## Diretório de trabalho/Working Directory
+
+- A função `getwd()` serve para conferir o diretório de trabalho: 
+
+```r
+> getwd()
+[1] "/Users/beatrizmilz/GitHub/2022-curso-de-verao-ime-usp-relatorios"
+```
+
+- A função `setwd()` serve para alterar o diretório de trabalho. **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
+
+  
+## Caminhos
+
+- Caminhos são textos que representam o endereço do arquivo no computador. 
+
+- É muito importante entender como funcionam! Caso contrário, ficará difícil fazer coisas como importar dados para o R.
+
+## Caminhos absolutos e relativos
+
+- Caminhos absolutos: tem início na pasta raiz do seu computador/usuário. **NÃO É RECOMENDADO O USO! Isso torna o código não reprodutível.**
+
+- Caminhos relativos: tem início no diretório de trabalho da sessão. Caso você esteja usando projetos, os caminhos relativos tem início na pasta inicial do projeto. 
+
+
+- **Utilize sempre que possível caminhos relativos.**
+
+
+## Exemplos de caminhos
+
+Exemplos acessando o mesmo arquivo:
+
+Caminho absoluto:
+```
+"/Users/beatrizmilz/GitHub/2022-curso-de-verao-ime-usp-relatorios/docs/slides/img/rprojs.png"
+```
+
+Caminho relativo:
+```
+"docs/slides/img/rprojs.png"
+```
+
+
+## here
+O pacote `here` também possui funções úteis para escrever caminhos: 
+
+```{r echo=TRUE}
+here::here()
+```
+
+
+## Pacote R Markdown
+
+
+- Criado e mantido pela [RStudio](https://rstudio.com/)
+
+- Princípio: arquivos onde escrevemos textos e marcamos com `markdown`, mas também podemos adicionar códigos que são executados.
+
+- Extensão `.Rmd`
+
+- Possibilita a utilização de códigos `R`, `Python`, `Markdown`, `HTML`, `CSS`, `SQL`, e outros em um único arquivo.
+
+- A reprodutibilidade é algo importante para o R Markdown.
+
+## Pacote R Markdown
+
+A comunidade de R, e a equipe da RStudio, desenvolveram outros pacotes que integram bem com R Markdown para  gerar diversos produtos de análise de dados diferentes, com arquivos .Rmd. 
+
+![](https://beatrizmilz.github.io/slidesR/img/rmarkdown/markdown.png){fig-align="center" width="30%"}
+
+
+:::footer
+Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a>
+:::
+
+## Exemplos {.small}
+
+
+```{r echo=FALSE}
+exemplos_rmd <- tibble::tibble(pacote = as.character(),
+               desc = as.character(),
+               exemplos = as.character()) |> 
+  
+  tibble::add_row(pacote = "[blogdown](https://bookdown.org/yihui/blogdown/)",
+                  desc = "Blogs e sites",
+                  exemplos = "- [Site da Curso-R](https://curso-r.com/) <br> - [Site da Associação Brasileira de Jurimetria (ABJ)](https://abj.org.br/)") |> 
+  
+  tibble::add_row(pacote = "[distill](https://rstudio.github.io/distill/)",
+                  desc = "Blogs e sites",
+                  exemplos = "- [RStudio AI Blog](https://blogs.rstudio.com/ai/) <br> - [Laboratório da Associação Brasileira de Jurimetria (ABJ)](https://lab.abj.org.br/)") |> 
+  
+  tibble::add_row(pacote = "[bookdown](https://bookdown.org/)",
+                  desc = "Livros",
+                  exemplos = "- [Livro Ciência de Dados em R](https://livro.curso-r.com/) <br> - [R for Data Science](https://r4ds.had.co.nz/)") |> 
+  
+  tibble::add_row(pacote = "[xaringan](https://github.com/yihui/xaringan) e [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/)",
+                  desc = "Apresentações",
+                  exemplos = "- [Build Your Own Universe - Garrick Aden-Buie & Travis Gerke](https://www.garrickadenbuie.com/talk/build-your-own-universe/)") |> 
+  
+  tibble::add_row(pacote = "[pagedown](https://github.com/rstudio/pagedown)",
+                  desc = "Currículos, cartas e trabalhos acadêmicos",
+                  exemplos = "- [Relatório do Observatório da Insolvência](https://abjur.github.io/obsFase2/relatorio/obs_recuperacoes_abj.pdf) <br>  - [Meu currículo](https://beatrizmilz.github.io/resume/index.html) ") |> 
+
+
+  tibble::add_row(pacote = "[learnr](https://rstudio.github.io/learnr/)",
+                  desc = "Tutoriais interativos",
+                  exemplos = "- [Text mining with tidy data principles](https://juliasilge.shinyapps.io/learntidytext/) <br> - [Teacups, Giraffes,  & Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/)") |> 
+  
+  tibble::add_row(pacote = "[flexdashboard](https://pkgs.rstudio.com/flexdashboard/)",
+                  desc = "Dashboards estáticos",
+                  exemplos = "- [Exemplos da documentação](https://pkgs.rstudio.com/flexdashboard/articles/examples.html) <br> - [A COVID-19 em Sorocaba - Por Victor Dogo](https://victordogo.github.io/covid19-sorocaba/)") |> 
+  
+  tibble::add_row(pacote = "[rticles](https://github.com/rstudio/rticles)",
+                  desc = "Artigos científicos",
+                  exemplos = "   ") |>  
+  tibble::add_row(pacote = " ",
+                  desc = "Outros exemplos",
+                  exemplos = "[Newsletter Garimpo](https://nucleo.jor.br/newsletters/garimpo)") 
+  
+
+
+exemplos_rmd |> 
+ gt::gt() |> 
+  gt::fmt_markdown(columns = tidyselect::everything())
+```
+
+
+:::footer
+<i class="far fa-flag"></i> Slide adaptado do curso de Relatórios automatizados, da [Curso-R](https://curso-r.com/).
+:::
+
+
+
+## Outros pacotes:
+
+  - [rticles](https://github.com/rstudio/rticles)
+
+  - [bslib](https://rstudio.github.io/bslib/)
+
+  - [rmdformats](https://github.com/juba/rmdformats)
+
+  - [officedown](https://github.com/davidgohel/officedown) 
+
+  - [postcards](https://github.com/seankross/postcards)
+
+
+
+
+## Podemos criar templates
+
+  - [abjTemplates](https://github.com/abjur/abjTemplates)
+
+  - [RLadiesTheme](https://github.com/R-Ladies-Sao-Paulo/RLadiesTheme)
+
+
+
+
+
+
+## Vamos começar? {.middle .center}
+
+
+## Outras referências interessantes:
+
+- [Introduction to bioinformatics -  Chapter 8 Reproducible research - Laurent Gatto](https://uclouvain-cbio.github.io/WSBIM1207/sec-rr.html)
