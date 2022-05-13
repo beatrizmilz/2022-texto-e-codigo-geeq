@@ -237,9 +237,9 @@ Nature 533, 452--454 (2016).
 
 -   Documentar a análise
 
-- Transformar códigos ou etapas repetitivas em funções
+-   Transformar códigos ou etapas repetitivas em funções
 
-- Algo que facilita: use um gerenciador de referências (eu uso o [Zotero](https://www.zotero.org/))!
+-   Algo que facilita: use um gerenciador de referências (eu uso o [Zotero](https://www.zotero.org/))!
 
 ## Projetos do RStudio
 
@@ -415,8 +415,7 @@ exemplos_rmd |>
 
 ### <https://rstudio.cloud/project/4042565>
 
-## Indo além do R Markdown simples {.middle .center}
-
+## Parte 2: Indo além do R Markdown simples {.middle .center}
 
 ## Citar o R - Função citation() {.small}
 
@@ -510,9 +509,8 @@ tibble::tibble(
 
 -   Devemos informar caminho até o arquivo CSL no YAML, por exemplo:
 
-```{=html}
 <!-- -->
-```
+
     csl: template/abnt.csl
 
 -   Lugares para baixar arquivos CSL:
@@ -528,9 +526,8 @@ tibble::tibble(
     As regras de formatação serão copiadas.
     Não funciona perfeitamente!
 
-```{=html}
 <!-- -->
-```
+
     output: 
       bookdown::word_document2:
         reference_docx: template/modelo.docx
@@ -541,9 +538,8 @@ tibble::tibble(
 
 -   Exemplo de YAML:
 
-```{=html}
 <!-- -->
-```
+
     output: 
       bookdown::word_document2:
         reference_docx: template/modelo.docx
@@ -572,7 +568,7 @@ tibble::tibble(
         -   Exemplo da criação do rótulo: `# Introdução {#introducao}`
         -   Exemplo de uso no texto: `\@ref(introducao)` .
         -   Referência: https://bookdown.org/yihui/bookdown/cross-references.html
-        
+
 ## Adicionar equações {.small}
 
 Podemos adicionar equações em LaTeX.
@@ -591,7 +587,6 @@ Equação junto ao texto: Envolver a equação por um `$`.
 ``` md
 $${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
 ```
-
 
 ## Outras referências interessantes:
 
